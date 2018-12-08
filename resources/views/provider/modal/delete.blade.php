@@ -1,6 +1,6 @@
-<div class="modal fade-modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-delete-{{ $user -> id }}">
+<div class="modal fade-modal-slide-in-right" aria-hidden="true" role="dialog" tabindex="-1" id="modal-delete-{{ $provider -> id }}">
 
-        <form action="{{ route('UserDestroy' , $user->id) }}" method="post">
+        <form action="{{ route('ProviderDestroy' , $provider->id) }}" method="post">
             {{ csrf_field() }}
             <input name="_method" type="hidden" value="DELETE">
             <div class="modal-dialog">
@@ -9,7 +9,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="close">
                             <span aria-hidden="true">x</span>
                         </button>
-                        <h4 class="modal-title">Eliminar Usuario</h4>
+                        <h4 class="modal-title">Eliminar Proveedor</h4>
                     </div>
                     <div class="modal-body">
                         <p>¿Seguro que desea eliminar?</p>

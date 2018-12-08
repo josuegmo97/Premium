@@ -24,6 +24,11 @@ Route::delete('/usuario/{id}', 'UserController@destroy')->name('UserDestroy');
 Route::get('/proveedores', 'ProviderController@index');
 Route::get('/proveedores/nuevo', 'ProviderController@create');
 Route::post('/proveedores/nuevo', 'ProviderController@store');
+Route::delete('/proveedores/{id}', 'ProviderController@destroy')->name('ProviderDestroy');
+Route::get('/proveedores/{id}', 'ProviderController@show')->name('ProviderShow');
+Route::get('/proveedores/{id}/editar', 'ProviderController@edit')->name('ProviderEdit');
+Route::put('/proveedores/{id}/editar', 'ProviderController@update')->name('ProviderUpdate');
+
 
 /* Servicios */
 

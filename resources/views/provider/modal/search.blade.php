@@ -1,4 +1,4 @@
-    <form action={{-- "{{ url('usuario') }}" --}} method="GET" autocomplete="off" role="search">
+    <form action="{{ url('proveedores') }}" method="GET" autocomplete="off" role="search">
         <div class="form-group">
             <div class="input-group">
                 <input type="text" class="form-control" name="searchText" placeholder="Buscar..." value={{-- "{{ $searchText }}" --}}>

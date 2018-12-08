@@ -13,31 +13,31 @@
 
     <table class="table">
         <thead>
-            <th>Rif</th>
+            {{-- <th>Rif</th> --}}
             <th>Empresa</th>
-            <th>Dir. Fiscal</th>
+            {{-- <th>Dir. Fiscal</th> --}}
             <th>Teléfono</th>
-            <th>Correo</th>
+            {{-- <th>Correo</th> --}}
             <th>Tipo de servicio</th>
             <th>Agregado por</th>
         </thead>
-        {{--  @foreach ($providers as $provider) --}}
+        @foreach ($providers as $provider)
         <tbody>
-            <td>J-19256932-2</td>
-            <td>Polar Light</td>
+            <td>{{ $provider->company }}</td>
+            {{-- td>Polar Light</td>
             <td>Av Casanova, calle 45 boston</td>
-            <td>0212-462-34-16</td>
-            <td>empresaspolar@gmail.com</td>
-            <td>Electricista</td>
+            <td>0212-462-34-16</td> --}}
+            <td>{{ $provider->phone }}</td>
+            <td>{{ $provider->ser }}</td>
             <td>Sandra</td>
             <td>
-                <a {{-- href="{{ route('UserEdit' , [$provider->id]) }} --}}"><button class="btn btn-primary">Ver mas</button></a>
-                <a {{-- href="" data-target="#modal-delete-{{ $provider->id }}" --}} data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
+                <a href="{{ route('ProviderShow' , [$provider->id]) }}"><button class="btn btn-primary">Ver mas</button></a>
+                <a href="" data-target="#modal-delete-{{ $provider->id }}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
             </td>
         </tbody>
-        {{-- @include('provider.modal.delete')
-        @endforeach --}}
+        @include('provider.modal.delete')
+        @endforeach
     </table>
-    {{-- {{ $providers -> render()}} --}}
+    {{ $providers -> render()}}
 
 @endsection
