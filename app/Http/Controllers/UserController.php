@@ -5,6 +5,7 @@ namespace premium\Http\Controllers;
 use Illuminate\Http\Request;
 use premium\Http\Requests\UsersRequest;
 use premium\Http\Requests\UserUpdateRequest;
+use Session;
 use premium\User;
 use premium\Role;
 use DB;
@@ -61,6 +62,7 @@ class UserController extends Controller
             'password' => bcrypt($request['password']),
         ]);
 
+        Session::flash('message', 'Usuario Creado Correctamente.');
         return redirect('usuario');
     }
 
@@ -100,6 +102,16 @@ class UserController extends Controller
      */
     public function update(UserUpdateRequest $request, $id)
     {
+
+        $this->validate(
+            $request, [
+            'email' => 'required|unique:users,email,'.$id,
+
+        ],
+            $messages = [
+            'email.unique' => 'El Email que ha ingresado ya está en uso.',
+        ]);
+
         $users = User::FindOrFail($id);
 
         $users->update([
@@ -109,6 +121,7 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
+        Session::flash('message', 'Usuario Actualizado Correctamente.');
         return redirect('usuario');
 
     }
@@ -121,6 +134,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $users = User::findOrfail($id);
+        $users->delete();
+
+        Session::flash('message', 'Usuario Eliminado Correctamente.');
+        return redirect('usuario');
     }
 }

@@ -63,7 +63,7 @@
                             <a href="#"><i class="fa fa-user fa-fw"></i> Usuarios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{!!URL::to('/usuario/create')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="{!!URL::to('/usuario/nuevo')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                                 </li>
                                 <li>
                                     <a href="{!!URL::to('/usuario')!!}"><i class='fa fa-list-ol fa-fw'></i> Listado de usuarios</a>
@@ -75,10 +75,10 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i> Proveedores<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class='fa fa-plus fa-fw'></i> Agregar</a>
+                                    <a href="{!!URL::to('/proveedores/nuevo')!!}"><i class='fa fa-plus fa-fw'></i> Agregar</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class='fa fa-list-ol fa-fw'></i> Listado de proovedores</a>
+                                    <a href="{!!URL::to('/proveedores')!!}"><i class='fa fa-list-ol fa-fw'></i> Listado de proovedores</a>
                                 </li>
                             </ul>
                         </li>
@@ -91,6 +91,17 @@
                                 <li>
                                     <a href="#"><i class='fa fa-list-ol fa-fw'></i> Listado de facturas</a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-plus-circle fa-fw"></i> Extras<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{ URL::to('/extra/servicio') }}"><i class='fa fa-plus fa-fw'></i> Agregar Tipo de Servicio</a>
+                                </li>
+                                {{-- <li>
+                                    <a href="#"><i class='fa fa-list-ol fa-fw'></i> Listado de facturas</a>
+                                </li> --}}
                             </ul>
                         </li>
                     </ul>
